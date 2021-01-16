@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="https://kit.fontawesome.com/c983106ad6.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="todolist_wrapper">
+    <form class="task_form" action="">
+        <div class="button__close_container">
+            <button type="button" class="button__close"><i class="fas fa-times"></i></button>
+        </div>
+        <label for="task_name" class="title">Название задачи:</label>
+        <input id="task_name" placeholder=" * required"  type="text">
+        <div class="warning"></div>
+        <label for="task_description" class="title">Описание задачи:</label>
+        <textarea id="task_description"></textarea>
+        <div class="warning"></div>
+        <div class="form_button_container">
+            <button class="button__submit" type="submit">Добавить</button>
+            <button type="reset">Очистить</button>
+        </div>
+    </form>
+    <div class="notebook">
+        <nav class="notebook_menu">
+            <button tabindex="1"  class="button__underline button__current_tasks">Текущие задачи</button>
+            <button tabindex="2" class="button__completed_tasks">Выполненные задачи</button>
+            <button tabindex="3" class="button__deleted_tasks">Удалённые задачи</button>
+        </nav>
+        <div class="slider_container">
+            <div class="notebook_tasks slider">
+                <div  class="notebook_task_container">
+                    <div class="notebook_task">
+                        <div class="notebook_task_number">
+
+                        </div>
+                        <div class="notebook_task_description">
+                            <h2 class="title">
+                                Покормить собаку
+                            </h2>
+                            <p class="description">
+                                Покормить собаку в 12 часов
+                            </p>
+                        </div>
+                        <div class="notebook_task_button_container">
+                            <button class="button__done"><i class="fas fa-check"></i></button>
+                            <button class="button__delete"><i class="fas fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="button_container">
+                    <button class="button__add"><i class="fas fa-plus"></i></button>
+                </div>
+            </div>
+            <div class="completed_tasks slider">
+                <div class="completed_tasks_container">
+                </div>
+            </div>
+        <div class="notebook_deleted_tasks slider">
+                <div class="notebook_deleted_tasks_container">
+                </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="popup__fade"></div>
+<script defer src="./js/slider.js"></script>
+<script defer src="./js/form.js"></script>
+</body>
+</html>
