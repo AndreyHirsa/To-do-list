@@ -163,7 +163,7 @@ taskForm.addEventListener("submit", (event) => {
 })
 
 
-
+const completedTasksContainer = document.querySelector(".completed_tasks_container");
 const deletedTasksContainer = document.querySelector(".notebook_deleted_tasks_container");
 
 //перемещаем задачу в удалённые и пересчитываем нумерацию
@@ -175,11 +175,12 @@ sliderContainer.addEventListener("click", event => {
         deletedTasksContainer.append(target.closest('.notebook_task'));
         numbering(notebookTaskContainer);
         numbering(deletedTasksContainer);
+        numbering(completedTasksContainer);
     }
 })
 
 
-const completedTasksContainer = document.querySelector(".completed_tasks_container");
+
 
 //перемещаем задачу в выполненные и пересчитываем нумерацию
 sliderContainer.addEventListener("click", event => {
@@ -190,6 +191,7 @@ sliderContainer.addEventListener("click", event => {
         completedTasksContainer.append(target.closest('.notebook_task'));
         numbering(notebookTaskContainer);
         numbering(completedTasksContainer);
+        numbering(deletedTasksContainer);
     }
 })
 
