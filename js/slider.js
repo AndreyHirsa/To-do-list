@@ -14,7 +14,7 @@ let translateValue = 500;
 let navMenuButtons = [currentTasks, completedTasks, deletedTasks];
 
 
-//меняем класс при клике на кнопки меню и скроллим контейнер
+//меняем класс при клике на кнопки меню и скроллим контейнер.
 notebookNav.addEventListener("click", event => {
     const target = event.target;
     if (target.tagName === "BUTTON") {
