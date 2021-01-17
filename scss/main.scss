@@ -1,4 +1,4 @@
-body {
+body{
   font-family: 'Caveat', cursive;
   font-size: 16px;
 }
@@ -215,9 +215,10 @@ i{
   background-color: #FFFFFF;
 }
 
-.slider {
+.slider{
   width: 500px;
 }
+
 
 .notebook_tasks {
   display: flex;
@@ -227,7 +228,7 @@ i{
   .button_container {
     display: flex;
     padding: 10px;
-    width: 500px;
+    width: 100%;
     transition: 0.3s;
     justify-content: flex-end;
     .button__add {
@@ -243,18 +244,18 @@ i{
   }
 }
 
+
 .notebook_task {
   border-bottom: 1px solid #bdbdbd;
   display: flex;
-
   padding: 10px;
-  width: 500px;
-  height: 100px;
+  width: 100%;
+  min-height:100px;
 
   .notebook_task_number {
     display: flex;
     width: 30px;
-    height: 100%;
+    min-height: 100%;
     align-items: center;
     justify-content: center;
     margin-right: 10px;
@@ -264,16 +265,22 @@ i{
 
   .notebook_task_description {
     margin-right: 30px;
-    width: 400px;
-    height: 100%;
+    width: 100%;
+    .description{
+      word-break: break-all;
+    }
+    .title{
+      word-break: break-all;
+    }
   }
+
 
   .notebook_task_button_container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 25px;
-    height: 100%;
+    min-height: 100%;
 
     button {
       padding: 0;

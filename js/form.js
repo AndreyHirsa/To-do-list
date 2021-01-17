@@ -86,7 +86,7 @@ taskName.addEventListener('input', event => {
 //валидация описания задачи
 taskDescription.addEventListener('input', event => {
     checkParams();
-    if (taskDescription.value.trim().length > 100) {
+    if (taskDescription.value.trim().length > 99) {
         warning[1].textContent = "Cлишком длинное описание!";
 
     } else {
