@@ -1,6 +1,6 @@
 body{
-  font-family: 'Caveat', cursive;
-  font-size: 16px;
+  font-family: 'Montserrat', cursive;
+  font-size: 14px;
 }
 
 * {
@@ -45,17 +45,24 @@ i{
   height: 100vh;
   align-items: center;
   justify-content: center;
-  background: url("../uploads/images/background.jpg") no-repeat center;
-  background-size: cover;
+  background-image: linear-gradient(-45deg, transparent 52%, rgba(255,255,255,0.9) 54%, transparent 55%, transparent),
+  linear-gradient(45deg, transparent 52%, rgba(255,255,255,0.6) 54%, transparent 55%, transparent),
+  linear-gradient(-45deg, transparent 50%, rgba(0,0,0,0.1) 52%, transparent 53%, transparent),
+  linear-gradient(45deg, transparent 50%, rgba(0,0,0,0.05) 52%, transparent 53%, transparent);
+  background-color: #DDD7D7;
+  background-size: 50px 50px;
 }
 
 .task_form {
-  display: none;
+  z-index: 1;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  width: 500px;
   border-radius: 10px;
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  z-index: 2;
   position: absolute;
 
   .button__close_container {
@@ -76,17 +83,19 @@ i{
   .form_button_container {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content:center;
 
     button {
       transition: 0.3s;
-      font-family: 'Caveat', cursive;
+      font-family: 'Montserrat', cursive;
       font-weight: 500;
-      font-size: 20px;
+      font-size: 16px;
       color: #48aaff;
       border-radius: 10px;
       border: 2px solid #48aaff;
-
+      &:first-child{
+        margin-right: 15px;
+      }
       &[type="submit"]:hover {
         border-color: #00c853;
       }
@@ -107,7 +116,7 @@ i{
   }
 
   .warning {
-    height: 20px;
+    height: 16px;
     width: 100%;
     color: #ff0f0f;
   }
@@ -115,13 +124,14 @@ i{
   background-color: #FFFFFF;
 
   label {
-    width: 120px;
-    margin-bottom: 20px;
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
   }
 
   input, textarea {
-    font-family: 'Caveat', cursive;
-    width: 200px;
+    font-family: 'Montserrat', cursive;
+    width: 100%;
     height: 25px;
     border-radius: 10px;
     border: 1px solid #222222;
@@ -145,7 +155,7 @@ i{
 
 .title {
   font-weight: 500;
-  font-size: 20px;
+  font-size: 16px;
   color: #48aaff;
   margin-bottom: 11px;
 }
@@ -154,7 +164,7 @@ i{
 .notebook {
   overflow-y: visible;
   overflow-x: hidden;
-  width: 500px;
+  width: 700px;
   height: fit-content;
 }
 
@@ -173,10 +183,10 @@ i{
     position: relative;
     height: 40px;
     color: #252b42;
-    font-size: 20px;
+    font-size: 15px;
     border: none;
     background-color: transparent;
-    font-family: 'Caveat', cursive;
+    font-family: 'Montserrat', cursive;
 
     &:hover {
       color: #FFFFFF;
@@ -210,13 +220,14 @@ i{
 .slider_container {
   transition: 0.3s;
   display: flex;
-  width: 1500px;
+  width: 2100px;
   min-height: 500px;
   background-color: #FFFFFF;
 }
 
 .slider{
-  width: 500px;
+  width: 700px;
+  counter-reset: section;
 }
 
 
@@ -260,7 +271,11 @@ i{
     justify-content: center;
     margin-right: 10px;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 18px;
+    &:before{
+      counter-increment: section;
+      content:counter(section);
+    }
   }
 
   .notebook_task_description {
@@ -289,6 +304,12 @@ i{
 
       i {
         font-size: 25px;
+      }
+    }
+
+    .button__add{
+      i{
+        color: #48aaff;
       }
     }
 
