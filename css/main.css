@@ -1,6 +1,9 @@
+:root {
+  font-size: clamp(10px, 62.5%, 20px); }
+
 body {
   font-family: 'Montserrat', cursive;
-  font-size: 14px; }
+  font-size: 1rem; }
 
 * {
   box-sizing: border-box; }
@@ -27,12 +30,18 @@ i {
 
 .popup-close {
   position: absolute;
-  top: 10px;
-  right: 10px; }
+  top: 1em;
+  right: 1em; }
+
+.warning {
+  font-size: 1.6em;
+  height: 1.6em;
+  width: 100%;
+  color: #ff0f0f; }
 
 .todolist_wrapper {
   position: relative;
-  padding: 10px 10px;
+  padding: 1em 1em;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -40,193 +49,209 @@ i {
   justify-content: center;
   background-image: linear-gradient(-45deg, transparent 52%, rgba(255, 255, 255, 0.9) 54%, transparent 55%, transparent), linear-gradient(45deg, transparent 52%, rgba(255, 255, 255, 0.6) 54%, transparent 55%, transparent), linear-gradient(-45deg, transparent 50%, rgba(0, 0, 0, 0.1) 52%, transparent 53%, transparent), linear-gradient(45deg, transparent 50%, rgba(0, 0, 0, 0.05) 52%, transparent 53%, transparent);
   background-color: #DDD7D7;
-  background-size: 50px 50px; }
+  background-size: 5em 5em; }
 
 .task_form {
   z-index: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
-  border-radius: 10px;
+  width: 50em;
+  border-radius: 1em;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+  padding: 2em;
   position: absolute;
   background-color: #FFFFFF; }
-  .task_form .button__close_container {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    height: fit-content; }
-    .task_form .button__close_container .button__close {
-      padding: 0;
-      border: none;
-      background-color: transparent;
-      font-size: 25px;
-      color: red; }
-  .task_form .form_button_container {
-    width: 100%;
-    display: flex;
-    justify-content: center; }
-    .task_form .form_button_container button {
-      transition: 0.3s;
-      font-family: 'Montserrat', cursive;
-      font-weight: 500;
-      font-size: 16px;
-      color: #48aaff;
-      border-radius: 10px;
-      border: 2px solid #48aaff; }
-      .task_form .form_button_container button:first-child {
-        margin-right: 15px; }
-      .task_form .form_button_container button[type="submit"]:hover {
-        border-color: #00c853; }
-      .task_form .form_button_container button[type="reset"]:hover {
-        border-color: #ff0f0f; }
-    .task_form .form_button_container .button__disabled {
-      color: #bdbdbd;
-      border-color: #bdbdbd; }
-      .task_form .form_button_container .button__disabled[type="submit"]:hover {
-        border-color: #bdbdbd; }
-  .task_form .warning {
-    height: 16px;
-    width: 100%;
-    color: #ff0f0f; }
   .task_form label {
     display: block;
     width: 100%;
-    margin-bottom: 10px; }
-  .task_form input, .task_form textarea {
-    font-family: 'Montserrat', cursive;
-    width: 100%;
-    height: 25px;
-    border-radius: 10px;
-    border: 1px solid #222222; }
-  .task_form input::placeholder {
+    margin-bottom: 1em; }
+
+.input_task_name, .input_task_description {
+  font-size: 1.6em;
+  font-family: 'Montserrat', cursive;
+  width: 100%;
+  border-radius: 1em;
+  border: 1px solid #222222; }
+
+.input_task_name {
+  height: 2.5em; }
+  .input_task_name::placeholder {
     color: #ff0f0f; }
-  .task_form input:focus::placeholder {
+  .input_task_name:focus::placeholder {
     color: transparent; }
-  .task_form textarea {
-    resize: none;
-    height: 150px; }
+
+.input_task_description {
+  resize: none;
+  height: 15em; }
+
+.form_button_container {
+  width: 100%;
+  display: flex;
+  justify-content: center; }
+  .form_button_container button {
+    transition: 0.3s;
+    font-family: 'Montserrat', cursive;
+    font-weight: 500;
+    font-size: 1.6em;
+    color: #48aaff;
+    border-radius: 1em;
+    border: 2px solid #48aaff; }
+    .form_button_container button:first-child {
+      margin-right: 1.5em; }
+  .form_button_container .button__disabled {
+    color: #bdbdbd;
+    border-color: #bdbdbd; }
+    .form_button_container .button__disabled.button__submit:hover {
+      border-color: #bdbdbd; }
+
+.button__submit:hover {
+  border-color: #00c853; }
+
+.button__remove:hover {
+  border-color: #ff0f0f; }
+
+.button__close_container {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: fit-content; }
+
+.button__close {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font-size: 2.5em;
+  color: red; }
 
 .title {
   font-weight: 500;
-  font-size: 16px;
+  font-size: 1.6em;
   color: #48aaff;
-  margin-bottom: 11px; }
+  margin-bottom: 1.1em; }
 
 .notebook {
   overflow-y: visible;
   overflow-x: hidden;
-  width: 700px;
+  width: 70em;
   height: fit-content; }
 
 .notebook_menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 30px 10px;
-  height: 80px;
+  padding: 3em 1em;
+  height: 8em;
   width: 100%;
   background-color: #48aaff; }
-  .notebook_menu button {
-    transition: 0.3s;
-    font-weight: 500;
-    position: relative;
-    height: 40px;
-    color: #252b42;
-    font-size: 15px;
-    border: none;
-    background-color: transparent;
-    font-family: 'Montserrat', cursive; }
-    .notebook_menu button:hover {
-      color: #FFFFFF; }
-    .notebook_menu button::after {
-      transition: 0.3s;
-      width: 0;
-      content: "";
-      display: block;
-      position: absolute;
-      height: 2px;
-      background-color: #FFFFFF;
-      top: 100%;
-      left: 0; }
-  .notebook_menu .button__underline {
+
+.nav_button {
+  transition: 0.3s;
+  font-weight: 500;
+  position: relative;
+  height: 4em;
+  color: #252b42;
+  font-size: 1.5em;
+  border: none;
+  background-color: transparent;
+  font-family: 'Montserrat', cursive; }
+  .nav_button:hover {
     color: #FFFFFF; }
-    .notebook_menu .button__underline::after {
-      width: 100%;
-      transform: translateX(0); }
+  .nav_button::after {
+    transition: 0.3s;
+    width: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    height: 0.2em;
+    background-color: #FFFFFF;
+    top: 100%;
+    left: 0; }
+
+.button__underline {
+  color: #FFFFFF; }
+  .button__underline::after {
+    width: 100%;
+    transform: translateX(0); }
 
 .slider_container {
   transition: 0.3s;
   display: flex;
-  width: 2100px;
-  min-height: 500px;
+  width: 210em;
+  min-height: 50em;
   background-color: #FFFFFF; }
 
 .slider {
-  width: 700px;
+  width: 70em;
   counter-reset: section; }
 
 .notebook_tasks {
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
-  .notebook_tasks .button_container {
-    display: flex;
-    padding: 10px;
-    width: 100%;
-    transition: 0.3s;
-    justify-content: flex-end; }
-    .notebook_tasks .button_container .button__add {
-      padding: 0;
-      border: none;
-      background-color: transparent; }
-      .notebook_tasks .button_container .button__add i {
-        font-size: 35px;
-        color: #48aaff; }
+
+.button_container {
+  display: flex;
+  padding: 1em;
+  width: 100%;
+  transition: 0.3s;
+  justify-content: flex-end; }
+  .button_container .button__add {
+    padding: 0;
+    border: none;
+    background-color: transparent; }
+    .button_container .button__add i {
+      font-size: 3.5em;
+      color: #48aaff; }
 
 .notebook_task {
   border-bottom: 1px solid #bdbdbd;
   display: flex;
-  padding: 10px;
+  padding: 1em;
   width: 100%;
-  min-height: 100px; }
-  .notebook_task .notebook_task_number {
-    display: flex;
-    width: 30px;
-    min-height: 100%;
-    align-items: center;
-    justify-content: center;
-    margin-right: 10px;
-    font-weight: 500;
-    font-size: 18px; }
-    .notebook_task .notebook_task_number:before {
-      counter-increment: section;
-      content: counter(section); }
-  .notebook_task .notebook_task_description {
-    margin-right: 30px;
-    width: 100%; }
-    .notebook_task .notebook_task_description .description {
-      word-break: break-all; }
-    .notebook_task .notebook_task_description .title {
-      word-break: break-all; }
-  .notebook_task .notebook_task_button_container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 25px;
-    min-height: 100%; }
-    .notebook_task .notebook_task_button_container button {
-      padding: 0;
-      border: none;
-      background-color: transparent; }
-      .notebook_task .notebook_task_button_container button i {
-        font-size: 25px; }
-    .notebook_task .notebook_task_button_container .button__add i {
-      color: #48aaff; }
-    .notebook_task .notebook_task_button_container .button__done i {
-      color: #00c853; }
-    .notebook_task .notebook_task_button_container .button__delete i {
-      color: #ff0f0f; }
+  min-height: 10em; }
+
+.notebook_task_button_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 2.5em;
+  min-height: 100%; }
+  .notebook_task_button_container button {
+    padding: 0;
+    border: none;
+    background-color: transparent; }
+    .notebook_task_button_container button i {
+      font-size: 2.5em; }
+
+.button__add i {
+  color: #48aaff; }
+
+.button__done i {
+  color: #00c853; }
+
+.button__delete i {
+  color: #ff0f0f; }
+
+.notebook_task_number {
+  display: flex;
+  width: 3em;
+  min-height: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1em;
+  font-weight: 500;
+  font-size: 1.6em; }
+  .notebook_task_number:before {
+    counter-increment: section;
+    content: counter(section); }
+
+.notebook_task_description {
+  margin-right: 3em;
+  width: 100%; }
+  .notebook_task_description .description {
+    font-size: 1.6em;
+    word-break: break-all; }
+  .notebook_task_description .title {
+    word-break: break-all; }

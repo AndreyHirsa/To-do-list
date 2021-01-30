@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
     <script src="https://kit.fontawesome.com/c983106ad6.js" crossorigin="anonymous"></script>
 </head>
@@ -17,10 +18,9 @@
 <div class="todolist_wrapper">
     <div class="notebook">
         <nav class="notebook_menu">
-            <button tabindex="1" class="button__underline button__current_tasks">Текущие задачи
-            </button>
-            <button tabindex="2" class="button__completed_tasks">Выполненные задачи</button>
-            <button tabindex="3" class="button__deleted_tasks">Удалённые задачи</button>
+            <button tabindex="1" class="button__underline  nav_button">Текущие задачи</button>
+            <button tabindex="2" class="nav_button">Выполненные задачи</button>
+            <button tabindex="3" class="nav_button">Удалённые задачи</button>
         </nav>
         <div class="slider_container">
             <div class="notebook_tasks slider">
@@ -67,19 +67,20 @@
             <button type="button" class="button__close"><i class="fas fa-times"></i></button>
         </div>
         <label for="task_name" class="title">Название задачи:</label>
-        <input id="task_name" placeholder=" * required" type="text">
-        <div class="warning"></div>
+        <input id="task_name" class="input_task_name" placeholder=" * required" type="text">
+        <div class="warning wrong_name"></div>
         <label for="task_description" class="title">Описание задачи:</label>
-        <textarea id="task_description"></textarea>
-        <div class="warning"></div>
+        <textarea class="input_task_description" id="task_description"></textarea>
+        <div class="warning wrong_description"></div>
         <div class="form_button_container">
             <button class="button__submit button__disabled" disabled type="submit">Добавить</button>
-            <button type="reset">Очистить</button>
+            <button class="button__remove" type="reset">Очистить</button>
         </div>
     </form>
 </div>
-<script defer src="./js/slider.js"></script>
-<script defer src="./js/form.js"></script>
-<script defer src="./js/render.js"></script>
+<script defer type="module" src="./js/slider.js"></script>
+<script defer type="module" src="./js/form.js"></script>
+<script defer type="module" src="./js/formValidation.js"></script>
+<script defer type="module" src="./js/render.js"></script>
 </body>
 </html>
