@@ -1,13 +1,13 @@
 const notebookNav = document.querySelector(".notebook_menu");
-const buttons=notebookNav.querySelectorAll("button");
-let  navMenuButtons=Array.from(buttons);
+const buttons = notebookNav.querySelectorAll("button");
+let navMenuButtons = Array.from(buttons);
 let translateValue = 700;
-let activeBtn=navMenuButtons[0];
+let activeBtn = navMenuButtons[0];
 export const sliderContainer = document.querySelector(".slider_container");
 
 notebookNav.addEventListener("click", event => {
     const target = event.target;
-    const btn=target.closest(".nav_button");
+    const btn = target.closest(".nav_button");
 
     if (btn && btn !== activeBtn) {
         const index = navMenuButtons.findIndex(it => btn === it);

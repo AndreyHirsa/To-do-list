@@ -30,6 +30,7 @@ export function formValidation() {
 taskName.addEventListener('input', event => {
     formValidation();
     clearTimeout(timeout);
+
     if (!nameValidation()) {
         timeout = setTimeout(function () {
             return wrongName.textContent = `Введите больше 5 символов`;
