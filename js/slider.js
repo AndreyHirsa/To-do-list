@@ -4,6 +4,8 @@ let navMenuButtons = Array.from(buttons);
 let translateValue = 700;
 let activeBtn = navMenuButtons[0];
 export const sliderContainer = document.querySelector(".slider_container");
+import {savedTasks} from "./form.js";
+import {renderTask} from "./render.js";
 
 notebookNav.addEventListener("click", event => {
     const target = event.target;
@@ -15,5 +17,19 @@ notebookNav.addEventListener("click", event => {
         btn.classList.add('button__underline');
         activeBtn = btn;
         sliderContainer.style.transform = `translateX(-${translateValue * index}px)`;
+
+        if (btn.classList.contains("button__done_tasks")) {
+            let todos = savedTasks.filter(item => item.state === "done");
+            todos.forEach(renderTask);
+        }
+        if (btn.classList.contains("button__active_tasks")) {
+            let todos = savedTasks.filter(item => item.state === "active");
+            todos.forEach(renderTask);
+        }
+        if (btn.classList.contains("button__deleted_tasks")) {
+            let todos = savedTasks.filter(item => item.state === "deleted");
+            todos.forEach(renderTask);
+        }
     }
-}) 
+})
+

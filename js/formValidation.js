@@ -1,9 +1,6 @@
-const wrongDescription = document.querySelector(".wrong_description");
-const wrongName = document.querySelector(".wrong_name");
+import {taskDescription, taskName} from "./form.js";
+
 const buttonSubmit = document.querySelector(".button__submit");
-export const taskName = document.getElementById("task_name");
-export const taskDescription = document.getElementById("task_description");
-let timeout = null;
 
 export function formDisabled() {
     buttonSubmit.setAttribute("disabled", "disabled");
@@ -15,32 +12,14 @@ export function formEnabled() {
     buttonSubmit.classList.remove("button__disabled");
 }
 
-function nameValidation() {
+export function nameValidation() {
     return taskName.value.trim().length > 5;
 }
 
-function descriptionValidation() {
+export function descriptionValidation() {
     return taskDescription.value.trim().length < 100;
 }
 
 export function formValidation() {
     nameValidation() && descriptionValidation() ? formEnabled() : formDisabled();
 }
-
-taskName.addEventListener('input', event => {
-    formValidation();
-    clearTimeout(timeout);
-
-    if (!nameValidation()) {
-        timeout = setTimeout(function () {
-            return wrongName.textContent = `Введите больше 5 символов`;
-        }, 1500);
-    } else {
-        wrongName.textContent = "";
-    }
-})
-
-taskDescription.addEventListener('input', event => {
-    formValidation();
-    !descriptionValidation() ? wrongDescription.textContent = "Cлишком длинное описание!" : wrongDescription.textContent = "";
-})

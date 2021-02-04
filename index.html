@@ -18,9 +18,9 @@
 <div class="todolist_wrapper">
     <div class="notebook">
         <nav class="notebook_menu">
-            <button tabindex="1" class="button__underline  nav_button">Текущие задачи</button>
-            <button tabindex="2" class="nav_button">Выполненные задачи</button>
-            <button tabindex="3" class="nav_button">Удалённые задачи</button>
+            <button tabindex="1" class="button__active_tasks button__underline  nav_button">Текущие задачи</button>
+            <button tabindex="2" class="button__done_tasks nav_button">Выполненные задачи</button>
+            <button tabindex="3" class="button__deleted_tasks nav_button">Удалённые задачи</button>
         </nav>
         <div class="slider_container">
             <div class="notebook_tasks slider">
@@ -78,9 +78,9 @@
         </div>
     </form>
 </div>
-<script defer type="module" src="./js/slider.js"></script>
-<script defer type="module" src="./js/form.js"></script>
-<script defer type="module" src="./js/formValidation.js"></script>
-<script defer type="module" src="./js/render.js"></script>
+<script type="module" src="./js/form.js"></script>
+<script type="module" src="./js/formValidation.js"></script>
+<script type="module" src="./js/render.js"></script>
+<script type="module" src="./js/slider.js"></script>
 </body>
 </html>
