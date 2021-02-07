@@ -24,39 +24,16 @@
         </nav>
         <div class="slider_container">
             <div class="notebook_tasks slider">
-                <div class="notebook_task_container">
-                    <template class="template_task">
-                        <div class="notebook_task">
-                            <div class="notebook_task_number">
-
-                            </div>
-                            <div class="notebook_task_description">
-                                <h2 class="title">
-
-                                </h2>
-                                <p class="description">
-
-                                </p>
-                            </div>
-                            <div class="notebook_task_button_container">
-                                <button class="button__done"><i class="fas fa-check"></i></button>
-                                <button class="button__delete"><i class="fas fa-times"></i></button>
-                                <button class="button__add"><i class="fas fa-plus"></i></button>
-                            </div>
-                        </div>
-                    </template>
-                </div>
+                <div class="notebook_task_container"></div>
                 <div class="button_container">
                     <button class="button__add"><i class="fas fa-plus"></i></button>
                 </div>
             </div>
             <div class="completed_tasks slider">
-                <div class="completed_tasks_container">
-                </div>
+                <div class="completed_tasks_container"></div>
             </div>
             <div class="notebook_deleted_tasks slider">
-                <div class="notebook_deleted_tasks_container">
-                </div>
+                <div class="notebook_deleted_tasks_container"></div>
             </div>
         </div>
     </div>
@@ -78,6 +55,20 @@
         </div>
     </form>
 </div>
+<template class="template_task">
+    <div class="notebook_task">
+        <div class="notebook_task_number"></div>
+        <div class="notebook_task_description">
+            <h2 class="title"></h2>
+            <p class="description"></p>
+        </div>
+        <div class="notebook_task_button_container">
+            <button class="button__done"><i class="fas fa-check"></i></button>
+            <button class="button__delete"><i class="fas fa-times"></i></button>
+            <button class="button__add"><i class="fas fa-plus"></i></button>
+        </div>
+    </div>
+</template>
 <script type="module" src="./js/form.js"></script>
 <script type="module" src="./js/formValidation.js"></script>
 <script type="module" src="./js/render.js"></script>

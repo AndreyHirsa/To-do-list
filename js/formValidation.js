@@ -1,15 +1,13 @@
-import {taskDescription, taskName} from "./form.js";
-
-const buttonSubmit = document.querySelector(".button__submit");
+import {taskDescription, taskName, buttonSubmit} from './form.js';
 
 export function formDisabled() {
-    buttonSubmit.setAttribute("disabled", "disabled");
-    buttonSubmit.classList.add("button__disabled");
+    buttonSubmit.setAttribute('disabled', 'disabled');
+    buttonSubmit.classList.add('button__disabled');
 }
 
 export function formEnabled() {
-    buttonSubmit.removeAttribute("disabled");
-    buttonSubmit.classList.remove("button__disabled");
+    buttonSubmit.removeAttribute('disabled');
+    buttonSubmit.classList.remove('button__disabled');
 }
 
 export function nameValidation() {
