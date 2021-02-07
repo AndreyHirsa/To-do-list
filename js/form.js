@@ -6,7 +6,8 @@ const buttonClose = taskForm.querySelector('.button__close');
 const buttonAddTask = document.querySelector('.button__add');
 let timeout = null
 
-import {renderTask} from './render.js';
+import {todosFilter} from "./slider.js";
+import {ACTIVE, renderTask} from './render.js';
 import {formDisabled, formValidation, nameValidation, descriptionValidation} from './formValidation.js';
 
 export const buttonSubmit = taskForm.querySelector('.button__submit');
@@ -54,7 +55,6 @@ taskName.addEventListener('input', event => {
     wrongNameWarning();
 })
 
-
 taskDescription.addEventListener('input', event => {
     formValidation();
     wrongDescriptionWarning();
@@ -86,8 +86,7 @@ window.addEventListener('beforeunload', event => {
 
 document.addEventListener('DOMContentLoaded', event => {
     savedTasks = JSON.parse(localStorage.getItem('tasks')) || [];
-    let todos = savedTasks.filter(item => item.state === 'active');
-    todos.forEach(data => renderTask(data));
+    todosFilter(ACTIVE);
 })
 
 

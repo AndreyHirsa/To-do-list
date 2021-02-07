@@ -2,7 +2,6 @@
   font-size: clamp(10px, 62.5%, 20px);
 }
 
-
 body {
   font-family: 'Montserrat', cursive;
   font-size: 1rem;
@@ -140,7 +139,6 @@ i {
   }
 }
 
-
 .button__submit:hover {
   border-color: #00c853;
 }
@@ -156,7 +154,6 @@ i {
   height: fit-content;
 }
 
-
 .button__close {
   padding: 0;
   border: none;
@@ -165,14 +162,12 @@ i {
   color: red;
 }
 
-
 .title {
   font-weight: 500;
   font-size: 1.6em;
   color: #48aaff;
   margin-bottom: 1.1em;
 }
-
 
 .notebook {
   overflow-y: visible;
@@ -240,7 +235,6 @@ i {
   width: 70em;
   counter-reset: section;
 }
-
 
 .notebook_tasks {
   display: flex;

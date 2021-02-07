@@ -10,6 +10,17 @@ import {DELETED, ACTIVE, DONE} from './render.js';
 
 export const sliderContainer = document.querySelector('.slider_container');
 
+export function todosFilter(state){
+    let todos = savedTasks.filter(item=>item.state===state);
+    todos.forEach(renderTask);
+}
+
+function removeChildren(container){
+    while (container.firstChild) {
+        container.firstChild.remove();
+    }
+}
+
 notebookNav.addEventListener('click', event => {
 
     const target = event.target;
@@ -23,25 +34,16 @@ notebookNav.addEventListener('click', event => {
         sliderContainer.style.transform = `translateX(-${translateValue * index}px)`;
 
         if (btn.classList.contains('button__done_tasks')) {
-            const todos = savedTasks.filter(item => item.state === DONE);
-            while (completedTasksContainer.firstChild) {
-                completedTasksContainer.firstChild.remove();
-            }
-            todos.forEach(renderTask);
+            removeChildren(completedTasksContainer);
+            todosFilter(DONE);
 
         } else if (btn.classList.contains('button__active_tasks')) {
-            const todos = savedTasks.filter(item => item.state === ACTIVE);
-            while (notebookTaskContainer.firstChild) {
-                notebookTaskContainer.firstChild.remove();
-            }
-            todos.forEach(renderTask);
+            removeChildren(notebookTaskContainer);
+            todosFilter(ACTIVE);
 
         } else if (btn.classList.contains('button__deleted_tasks')) {
-            const todos = savedTasks.filter(item => item.state === DELETED);
-            while (deletedTasksContainer.firstChild) {
-                deletedTasksContainer.firstChild.remove();
-            }
-            todos.forEach(renderTask);
+            removeChildren(deletedTasksContainer);
+            todosFilter(DELETED);
         }
     }
 })

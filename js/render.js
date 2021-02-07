@@ -15,30 +15,29 @@ export function renderTask({taskTitle, taskDesc, state, id}) {
     const node = templateContent.querySelector(".notebook_task");
     const noteBookTask = node.cloneNode(true);
     let todo = savedTasks.find(todo => todo.id === id);
+    let todoState=todo.state;
+
+    function removeTodo(state){
+        if(todo){
+            todoState=state;
+            noteBookTask.remove();
+        }
+    }
 
     noteBookTask.querySelector('.title').textContent = taskTitle;
     noteBookTask.querySelector('.description').textContent = taskDesc;
     noteBookTask.setAttribute('data-id', `${id}`);
 
-    noteBookTask.querySelector(".button__delete").addEventListener('click', e => {
-        if (todo) {
-            todo.state = DELETED;
-            noteBookTask.remove();
-        }
+    noteBookTask.querySelector('.button__delete').addEventListener('click', e => {
+        removeTodo(DELETED);
     })
 
-    noteBookTask.querySelector(".button__done").addEventListener('click', e => {
-        if (todo) {
-            todo.state = DONE;
-            noteBookTask.remove();
-        }
+    noteBookTask.querySelector('.button__done').addEventListener('click', e => {
+        removeTodo(DONE);
     })
 
-    noteBookTask.querySelector(".button__add").addEventListener('click', e => {
-        if (todo) {
-            todo.state = ACTIVE;
-            noteBookTask.remove();
-        }
+    noteBookTask.querySelector('.button__add').addEventListener('click', e => {
+        removeTodo(ACTIVE);
     })
 
     switch (state) {
